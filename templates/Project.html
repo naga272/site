@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>   
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device, initial-scale=1.0">
+        <meta name="author" content="Bastianello Federico">
+
+        <script src="../static/js/javascript.js"></script>   
+        <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        <link href="../static/css/style.css" rel="StyleSheet">
+        <link rel="icon" type="image/x-icon" href="../static/img/portfolio.png">
+        
+        <style>
+            .about_me img{
+                border-top:1px solid black;
+                border-bottom: 10px solid rgb(31, 30, 30);
+                border-left:10px solid black;
+            }
+
+            main div a{color:#fff;}
+
+            .figura{
+                color:#fff;
+                transition: all 1.7s ;
+            }
+            .figura:hover{
+                background-color:#1b1a1a;
+                color:#fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="display:flex; flex-direction: column;"> <!-- DIV DA NON TOCCARE -->
+            <header>
+                <div class="topbar">
+                    <div class="titolo_top">
+                        <a href="/"><span style="color:black">My Port</span><span style="color:#df2b4b">Folio</span></a>
+                    </div>
+                    <div class="group_link">
+                        <a href="/">Project</a>
+                        <a href="../certificazioni/">Certificazioni</a>
+                        <a href="../contattami/">Contact Me</a>
+                    </div>
+                </div>
+            </header>
+
+
+            <main style="display: flex; flex-direction: column; margin-top: 10%; margin-bottom: 10%;"> <!--     CORPO PAGINA        -->
+                
+                <div style="display:flex; flex-direction: row; width:100%">
+                    <a href="../brainfuck/">
+                        <div style="height:100%;">
+                            <figure style="text-align: center;" class="figura">
+                                <img src="../static/img/bf.png" alt="virus_C" width="50%" heigth="auto">
+                                <figcaption style="margin-top:1%; margin-bottom: 4%;">
+                                    I made a dialectal version<br>
+                                    of Brainfuck with python
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </a>
+
+                    <a href="../virus_c/">
+                        <div style="height:100%;">
+                            <figure style="text-align: center;" class="figura">
+                                <img src="../static/img/virus_c.png" alt="virus" width="50%" heigth="auto">
+                                <figcaption style="margin-top:1%; margin-bottom: 4%;">
+                                    I made a virus <br>
+                                    with C language
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </a>
+                    
+                    <a href="../compiler/">
+                        <div style="height:100%; padding-bottom: 4%;">
+                            <figure style="text-align: center;" class="figura">
+                                <img src="../static/img/assembly.jpg" alt="compiler" width="50%" heigth="auto">
+                                <figcaption style="margin-top:1%; margin-bottom: 4%;">
+                                    I made a little <br>
+                                    compiler with python and assembly
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </a>
+
+                </div>
+
+            </main>
+            <br>
+            <div class="bottombar">
+                <div class="firsttt">
+                    <h3>Support</h3>
+                    <a href="../contattami/">press here</a>
+                </div>
+                <div class="seconddd">
+                    <h3>contact me</h3>
+                    <a href="../contattami/">press here</a>
+                </div>
+                <div class="terzooo">
+                    Sito creato da
+                    <h3>Bastianello Federico</h3>
+                </div>
+            </div>
+        </div> <!-- DIV DA NON TOCCARE -->
+        <script type="text/javascript">
+            $("head").append("<title>Project</title>");
+            $("head").append("<meta charset='utf-8'>");
+            $("head").append("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
+            $("head").append("<meta name='author' content='Bastianello Federico'>");
+            $("head").append("<meta name='content' content='programmatore front-end e back-end, programmatore C, Python user'>");
+            $("head").append("<meta name='KeyWords' content='HTML5 CSS3 JS C Python frontend backend sviluppatore'>");
+        </script>
+        <script>
+            controllaTipoDispositivo();
+        </script>
+    </body>
+</html>

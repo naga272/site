@@ -1,0 +1,172 @@
+*{
+    outline:none;
+    text-decoration: none;
+    margin:0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    background-image: url('../img/black-hole-animation-nasa_600.gif');
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*                  HEAD                */
+.topbar{
+    padding:2%;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    position:fixed;
+    background:linear-gradient(62deg, #fff, #333);
+    transition: all .7s ease;
+    opacity:0.3;
+}.topbar:hover{
+    padding:4%;
+    opacity:1;
+}
+
+.titolo_top{
+    font-size:120%;
+    transition:all .7s;
+}.titolo_top:hover{
+    margin-left:2%;
+    margin-right:-2%;
+}
+.topbar .titolo_top a{
+    color:#fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.topbar .titolo_top span{
+    color:#fff;
+}
+.group_link{
+    width:40%;
+    margin-left:45%;
+}
+
+.group_link a{
+    color:black;   
+    padding-left: 1%; 
+    padding-right: 1%;
+    transition: all .7s ease-in-out;
+}.group_link a:hover{
+    color:#df2b4b;
+}
+
+
+/*                  BODY                */
+.presentazione{
+    margin-top:18%;
+    margin-left:15%;
+    margin-bottom:30%;
+}
+
+.presentazione2{
+    background-color: #333;
+    color:#fff;
+    display:flex;
+    flex-direction: column;
+}
+
+.about_me{
+    padding:8%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.presentazione2 .about_me .content{
+    text-align: center;
+    margin-left:2%;
+    margin-right:2%;
+    transition:all .7s;
+}
+
+.paragraf{
+    margin-top:1%;
+    color:#fff;
+    text-align: left;
+    transition:all .7s;
+    width:100%;
+}
+.paragraf:hover{
+    color:#df2b4b;
+    margin-left: 3%;
+}
+    
+.presentazione3{
+    height: 80vh;
+    background-color:rgb(10, 10, 10);
+    color:#fff;
+}
+
+.Service{
+    margin-top:20%;
+    width:100%;
+    text-align:center;
+}
+
+.presentazione3 .first, .second, .third{
+    margin-top:2%;
+    margin-left:2%;
+    padding:4%;
+    border: 1px solid #fff;
+    border-radius: 5%;
+    transition:all .7s;
+    text-align:center;
+}
+
+.presentazione3 .first:hover, .second:hover, .third:hover{
+    border: 1px solid #df2b4b;
+    padding-left:7%;
+    padding-right:7%;
+    color:#df2b4b;
+}
+
+.presentazione3 .first, .second, .third h3{
+    text-align: center;
+}
+
+
+/*          BOTTOMBAR           */
+
+.bottombar{
+    margin-top: 1%;
+    opacity:0.3;
+    padding:2%;
+    display:flex;
+    flex-direction: row;
+    background:linear-gradient(62deg, #fff, #333);
+    transition:all .7s;
+}.bottombar:hover{
+    opacity:1;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.bottombar .firsttt, .seconddd, .terzooo{
+    padding:1%;
+    text-align: center;
+    width:33%;
+    transition:all .7s;
+}
+.bottombar .firsttt:hover, .seconddd:hover, .terzooo:hover{
+    color:#df2b4b;
+}
+
+.bottombar .firsttt:hover{
+    border-right:1px solid #df2b4b;
+}
+
+.bottombar .seconddd:hover{
+    border-left:1px solid #df2b4b;
+    border-right:1px solid #df2b4b;
+}
+
+.bottombar .terzooo:hover{
+    border-left:1px solid #df2b4b;
+}

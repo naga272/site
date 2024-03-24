@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device, initial-scale=1.0">
+        <meta name="author" content="Bastianello Federico">
+
+        <script src="../static/js/javascript.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        <link href="../static/css/style.css" rel="StyleSheet">
+        <link rel="icon" type="image/x-icon" href="../static/img/portfolio.png">
+        <style>
+            #movement{
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 2s, transform 2s;
+            }
+
+            #movement.appear{
+				z-index: 1;
+                opacity: 1;
+                transform: translateY(0);
+				transition:all .7s;
+            }
+			#movement:hover{
+				padding-left:5%;
+			}
+
+            .about_me img{
+                border-top:1px solid black;
+                border-bottom: 10px solid rgb(31, 30, 30);
+                border-left:10px solid black;
+                transition:all .7s;
+            }.about_me img:hover{
+                margin-left: -5%;
+                margin-right: 5%;
+            }
+            .list_language img{
+                margin-left:2%;
+                margin-right:2%;
+            }
+            .image_explain{
+                transition:all .7s;
+            }.image_explain:hover{
+                width:60px;
+                height:60px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="display:flex; flex-direction: column;"> <!-- DIV DA NON TOCCARE -->
+            <header>
+                <div class="topbar">
+                    <div class="titolo_top">
+                        <a href="/"><span style="color:black">My Port</span><span style="color:#df2b4b">Folio</span></a>
+                    </div>
+                    <div class="group_link">
+                        <a href="project/">Project</a>
+                        <a href="certificazioni/">Certification</a>
+                        <a href="contattami/">Contact Me</a>
+                    </div>
+                </div>
+            </header>
+
+
+            <main style="display: flex; flex-direction: column;"> <!--     CORPO PAGINA        -->
+                <div class="presentazione" id="movement">
+                    <h2 style="color:pink; text-align:center; width:30%;">hi, my name is</h2>
+                    <h1 style="color: #fff; font-size: 300%;">Bastianello <span style="color:#df2b4b">Federico</span></h1>
+                </div>
+                <div class="presentazione2">
+                    <div class="about_me">
+                        <img width="45%" height="auto" src="../static/img/programmer-working-laptop_6427-156.jpg" alt="img_programmatore">
+                        <div class="content">
+                            <h1>About <span style="color:#df2b4b">Me</span></h1>
+                            <p class="paragraf">
+                                I'm 18 years old and I live in Verona.<br>
+                                currently a fourth-year student at Guglielmo Marconi 
+                                High School.<br>
+                                <br>
+                                My passion for computer science has developed over the years, and I typically use C,
+                                Assembly, and Python. <br>However, I am also familiar with other programming languages
+                                such as C++ and C#. <br>Additionally, I have proficiency in scripting languages like batch
+                                and JavaScript, as well as expertise in using HTML and CSS.<br>
+                                A part from my programming activities, I also enjoy spending time reading books on
+                                programming and studying online documentation released by professors.<br>
+                                In addition to my enthusiasm for computer science, I have a strong interest in travel and
+                                exploring new places. <br>Recently, I had the opportunity to visit Munich for three days with
+                                my school class, an experience that enriched my adventurous spirit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentazione3">
+                    <h2 style="width:100%; text-align: center; padding-top: 8%;">All langu<span style="color:#df2b4b">ages learned</span></h2>
+                    <div style="margin: auto; width:50%; display:flex; flex-direction: row; padding-top: 8%;" class="list_language">
+                        <img src="../static/img/asm.png"        alt="asm_icon"      width="48px" height="48px" id="asm" class="image_explain">
+                        <img src="../static/img/cicon.png"      alt="C_icon"        width="48px" height="48px" id="C" class="image_explain">
+                        <img src="../static/img/cpp.png"        alt="cpp_icon"      width="48px" height="48px" id="cpp" class="image_explain">
+                        <img src="../static/img/csharp.png"     alt="csharp_icon"   width="48px" height="48px" id="csharp" class="image_explain">
+                        <img src="../static/img/html5.png"      alt="html_icon"     width="48px" height="48px" id="html5" class="image_explain">
+                        <img src="../static/img/css3.png"       alt="css_icon"      width="48px" height="48px" id="css3" class="image_explain">
+                        <img src="../static/img/javascript.png" alt="Js_icon"       width="48px" height="48px" id="js" class="image_explain">
+                        <img src="../static/img/python.png"     alt="python_icon"   width="48px" height="48px" id="python" class="image_explain">
+                    </div>
+                    <p id="change_context">
+
+                    </p>
+                </div>
+                <div class="presentazione3 about_me">
+                    <div style="display:flex; flex-direction: column; width: 100%;">
+                        <h1 style="text-align: center; width: 100%;">My <span style="color:#df2b4b">Service</span></h1>
+                        <div style="display:flex; flex-direction: row; width: 100%; margin-top:8%;">
+                            
+                            <div class="first">
+                                <h3>Project</h3>
+                                <p>
+                                    In the following link there are some project I have been:<br>
+                                    <br>
+                                    <a href="project/" style="margin-top: 2%;">Press me</a>
+                                </p>
+                            </div>
+                            
+                            <div class="second">
+                                <h3>My CV</h3>
+                                <p>
+                                    In the following link there is my CV<br><br>
+                                    <a href="view-pdf/" style="margin-top: 2%;">Press me</a>
+                                </p>
+                            </div>
+                            
+                            <div class="third">
+                                <h3>Certification</h3>
+                                <p>
+                                    In the following link there are all my certification<br><br>
+                                    <a href="certificazioni/"  style="margin-top: 2%;">Press me</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <div class="bottombar">
+                <div class="firsttt">
+                    <h3>Support</h3>
+                    <a href="contattami/">press here</a>
+                </div>
+                <div class="seconddd">
+                    <h3>contact me</h3>
+                    <a href="contattami/">press here</a>
+                </div>
+                <div class="terzooo">
+                    Sito creato da
+                    <h3>Bastianello Federico</h3>
+                </div>
+            </div>
+        </div> <!-- DIV DA NON TOCCARE -->
+        <script type="text/javascript">
+            $("head").append("<title>HomePage</title>");
+            $("head").append("<meta charset='utf-8'>");
+            $("head").append("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
+            $("head").append("<meta name='author' content='Bastianello Federico'>");
+            $("head").append("<meta name='content' content='programmatore front-end e back-end, programmatore C, Python user'>");
+            $("head").append("<meta name='KeyWords' content='HTML5 CSS3 JS C Python frontend backend sviluppatore'>");
+        </script>
+        <script>controllaTipoDispositivo();</script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                // Ottieni l'elemento dal DOM
+            	var Presenta = document.getElementById("movement");
+
+                // Aggiungi la classe 'appear' all'elemento per attivare l'animazione
+                Presenta.classList.add("appear");
+            });
+        </script>
+        <script>
+            var text = document.getElementById("change_context");
+            text.style.paddingTop="3%";
+            text.style.paddingLeft="8%";
+            text.style.paddingRight="8%";
+
+            document.getElementById("asm").addEventListener("mouseover", function(){
+                text.innerHTML = "I particularly enjoy working with NASM for 64-bit CPU architecture. I find its syntax to be concise and powerful, allowing for efficient low-level programming. Additionally, its extensive documentation and widespread usage within the industry make it a valuable tool for developing high-performance software. Overall, NASM provides me with the flexibility and control I need to optimize code for modern 64-bit processors.";
+            });
+            
+            document.getElementById("asm").addEventListener("mouseout", function(){
+                text.innerHTML = "";
+            });
+
+            document.getElementById("C").addEventListener("mouseover", function(){
+                text.innerHTML = "It's the first language I've ever used and learned. I read the book called 'The C Language', and I love it.<br>As they explain the source code is literally amazing.<br>";
+                text.append("I like the C language because of its simplicity and efficiency. It's a powerful language that allows for low-level manipulation while still being widely used in various applications, from system programming to game development.");
+            });
+
+            document.getElementById("C").addEventListener("mouseout", function(){
+                text.innerHTML = "";
+            });
+
+            document.getElementById("cpp").addEventListener("mouseover", function(){
+                text.innerHTML = "I like the C++ language because of its powerful features, efficiency, and flexibility. Its ability to handle low-level tasks while also providing high-level abstractions makes it a versatile and robust language for a wide range of applications.";
+            });
+
+            document.getElementById("cpp").addEventListener("mouseout", function(){
+                text.innerHTML = "";
+            });
+            
+            document.getElementById("csharp").addEventListener("mouseover", function(){
+                text.innerHTML = "I like C# because of its robustness, versatility, and its strong integration with the .NET framework. Its syntax is clean and intuitive, making it easier to read and write code. Additionally, C# has a large community and extensive documentation, which makes it convenient for learning and troubleshooting.";
+            });
+            
+            document.getElementById("csharp").addEventListener("mouseout", function(){
+                text.innerHTML = "";
+            });
+
+
+            document.getElementById("html5").addEventListener("mouseover", function(){
+                text.innerHTML = "I really enjoy using HTML5 for web development. Its semantic markup makes it easier to create well-structured and accessible websites. Additionally, the new features and APIs in HTML5 allow for more interactive and dynamic web experiences, which greatly enhances user engagement. Overall, HTML5 provides a modern and powerful foundation for building cutting-edge web applications";
+            });            
+
+            document.getElementById("html5").addEventListener("mouseout", function(){
+                text.innerHTML = "";
+            });
+            
+            document.getElementById("css3").addEventListener("mouseover", function(){
+                text.innerHTML = "I really like CSS3 for its flexibility and the creative possibilities it offers in web design. Its ability to style and format web content in a visually appealing manner is impressive. Additionally, the advancements in CSS3, such as transitions, animations, and responsive design features, make it a powerful tool for creating modern and dynamic websites. Overall, CSS3 allows me to express my creativity and design aesthetic effectively.";
+            });
+
+            document.getElementById("css3").addEventListener("mouseout", function(){
+                text.innerHTML = "";
+            });
+
+            document.getElementById("js").addEventListener("mouseover", function(){
+                text.innerHTML = "I really like JavaScript because of its versatility and wide range of applications. It's amazing how JavaScript empowers me to create interactive and dynamic web experiences with ease. The flexibility of the language allows me to build everything from simple scripts to complex web applications. Overall, JavaScript's intuitive syntax and extensive community support make it a pleasure to work with.";
+            });
+
+            document.getElementById("js").addEventListener("mouseout", function(){
+                text.innerHTML = "";
+            });
+
+            document.getElementById("python").addEventListener("mouseover", function(){
+                text.innerHTML = "I like Python because of its simplicity, readability, and versatility. Python's clean syntax makes it easy to understand and write code, which is great for beginners and experienced developers alike. Additionally, Python has a vast ecosystem of libraries and frameworks that make it suitable for a wide range of applications, from web development to data analysis and machine learning. Overall, Python's combination of simplicity and power makes it my preferred programming language.";
+            });
+
+            document.getElementById("python").addEventListener("mouseout", function(){
+                text.innerHTML = "";
+            });
+
+
+        </script>
+    </body>
+</html>

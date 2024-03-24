@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device, initial-scale=1.0">
+        <meta name="author" content="Bastianello Federico">
+
+        <script src="../static/js/javascript.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        <link href="../static/css/style.css" rel="StyleSheet">
+        <link rel="icon" type="image/x-icon" href="../static/img/portfolio.png">
+        
+        <style>
+            .about_me img{
+                border-top:1px solid black;
+                border-bottom: 10px solid rgb(31, 30, 30);
+                border-left:10px solid black;
+            }
+
+            main div a{color:#fff;}
+
+            .figura{
+                color:#fff;
+                transition: all 1.7s ;
+            }
+            .figura:hover{
+                background-color:#333;
+                color:#fff;
+            }
+            table tr td{
+                padding:1%;
+                border:1px solid #fff;
+                transition:all .7s;
+            }
+            table tr td:hover{
+                padding:2%;
+                color: #df2b4b;
+                border:1px solid #df2b4b;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="display:flex; flex-direction: column;"> <!-- DIV DA NON TOCCARE -->
+            <header>
+                <div class="topbar">
+                    <div class="titolo_top">
+                        <a href="/"><span style="color:black">My Port</span><span style="color:#df2b4b">Folio</span></a>
+                    </div>
+                    <div class="group_link">
+                        <a href="../project/">Project</a>
+                        <a href="../certificazioni/">Certificazioni</a>
+                        <a href="../contattami/">Contact Me</a>
+                    </div>
+                </div>
+            </header>
+
+
+            <main style="display: flex; flex-direction: column; margin-top: 10%;"> <!--     CORPO PAGINA        -->
+                
+                <div style="padding: 2%; margin-right: -10%; margin-left: 5%; display:flex; color:#fff; flex-direction:column; width:80%; background-color: #333;">
+                    <h2>Virus with C pure</h2>
+                    <br><h3>Virus</h3>
+                    <p>
+                        Ho creato un virus molto semplice col linguaggio C,
+                        ho usato delle librerie standard (stdio.h, stdlib.h, windows.h) e la
+                        libreria pthread.h per la generazione infinita di thread.
+                    </p>
+                    <br>
+                    <p>
+                        Questo virus crea dei thread all'infinito e, per ogni thread creato crea un file
+                        nella quale ci va a scrivere al suo interno all'infinito,
+                        rallentando considerevolmente la velocità del computer. Per disabilitarlo, basta andare
+                        sul gestione attività e cercare tra i processi in background il nome dell'eseguibile virus e
+                        terminare il processo.
+                    </p><br>
+                    <img src="../static/img/test_virus.jpg" alt="virus_c" width="100%" height="100%"><br>
+                    <img src="../static/img/result.jpg" alt="virus_c" width="100%" height="100%">
+                    <br>
+                    <div>
+                        <h3>Download</h3>
+                        <p>puoi scaricare il codice sorgente al seguente link:</p>
+                        <a href="https://github.com/naga272/virus/tree/main/virus" target="_blank" style="color:blue">https://github.com/naga272/virus/tree/main/virus</a>
+                    </div>
+                </div>
+
+            </main>
+            <br>
+            <div class="bottombar">
+                <div class="firsttt">
+                    <h3>Support</h3>
+                    <a href="contattami/">press here</a>
+                </div>
+                <div class="seconddd">
+                    <h3>contact me</h3>
+                    <a href="contattami/">press here</a>
+                </div>
+                <div class="terzooo">
+                    Sito creato da
+                    <h3>Bastianello Federico</h3>
+                </div>
+            </div>
+        </div> <!-- DIV DA NON TOCCARE -->
+        <script type="text/javascript">
+            $("head").append("<title>Virus_C</title>");
+            $("head").append("<meta charset='utf-8'>");
+            $("head").append("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
+            $("head").append("<meta name='author' content='Bastianello Federico'>");
+            $("head").append("<meta name='content' content='programmatore front-end e back-end, programmatore C, Python user'>");
+            $("head").append("<meta name='KeyWords' content='HTML5 CSS3 JS C Python frontend backend sviluppatore'>");
+        </script>
+        <script>controllaTipoDispositivo();</script>
+    </body>
+</html>

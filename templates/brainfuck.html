@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device, initial-scale=1.0">
+        <meta name="author" content="Bastianello Federico">
+
+        <script src="../static/js/javascript.js"></script>     
+        <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        <link href="../static/css/style.css" rel="StyleSheet">
+        <link rel="icon" type="image/x-icon" href="../static/img/portfolio.png">
+        <style>
+            .about_me img{
+                border-top:1px solid black;
+                border-bottom: 10px solid rgb(31, 30, 30);
+                border-left:10px solid black;
+            }
+
+            main div a{color:#fff;}
+
+            .figura{
+                color:#fff;
+                transition: all 1.7s ;
+            }
+            .figura:hover{
+                background-color:#333;
+                color:#fff;
+            }
+            table tr td{
+                padding:1%;
+                border:1px solid #fff;
+                transition:all .7s;
+            }
+            table tr td:hover{
+                padding:2%;
+                color: #df2b4b;
+                border:1px solid #df2b4b;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="display:flex; flex-direction: column;"> <!-- DIV DA NON TOCCARE -->
+            <header>
+                <div class="topbar">
+                    <div class="titolo_top">
+                        <a href="/"><span style="color:black">My Port</span><span style="color:#df2b4b">Folio</span></a>
+                    </div>
+                    <div class="group_link">
+                        <a href="../project/">Project</a>
+                        <a href="../certificazioni/">Certificazioni</a>
+                        <a href="../contattami/">Contact Me</a>
+                    </div>
+                </div>
+            </header>
+
+
+            <main style="display: flex; flex-direction: column; margin-top: 10%;"> <!--     CORPO PAGINA        -->
+                
+                <div style="padding: 2%; margin-right: -10%; margin-left: 5%; display:flex; color:#fff; flex-direction:column; width:80%; background-color: #1b1a1a">
+                    <h2 style="color:#df2b4b">Bf Dialectal</h2><br>
+                    <h3>Come funziona il Dialect of Brainfuck?</h3>
+                    <div>
+                        L'idea alla base di Brainfuck è la manipolazione della memoria. 
+                        <br>Viene data una matrice di 30000 blocchi.
+                    </div><br>
+                    <div>
+                        All'interno di questo array si può aumentare/decrementare il puntatore di memoria e<br>
+                        incrementare/decrementare il valore al puntatore di memoria
+                    </div><br><br>
+                    <h2>Dialect</h2>
+                    <div>
+                        Questa versione di brainfuck, a differenza dell'originale, ha la matrice che è infinita, non ha un limite e ogni elemento al suo interno ha come valore massimo 1114111,<br>
+                        quindi può stampare ogni carattere esistente che è compreso nella tabella <a style="color:blue" href="it.wikipedia.org/wiki/Unicode">Unicode.</a><br>
+                    </div><br><br>
+                    <h2>Comandi utlizzabili</h2>
+                    <div>
+                        in questo linguaggio si possono usare solo 7 caratteri: <br><br>
+                        <table>
+                            <tr>
+                                <td style="width:10%;">+</td>
+                                <td>Incremento il byte indirizzato</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>decremento il byte indirizzato</td>
+                            </tr>
+                            <tr>
+                                <td>></td>
+                                <td>incremento il puntatore</td>
+                            </tr>
+                            <tr>
+                                <td><</td>
+                                <td>decremento il puntatore</td>
+                            </tr>
+                            <tr>
+                                <td>.</td>
+                                <td>stampo a schermo il byte indirizzato</td>
+                            </tr>
+                            <tr>
+                                <td>[</td>
+                                <td>inizio ciclo (corrisponde al while) uscirà solo se quando arriverà a "]" il byte indirizzato è uguale a 0, altrimenti ripete il ciclo</td>
+                            </tr>
+                            <tr>
+                                <td>]</td>
+                                <td>fine ciclo</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div><br>
+                        <h3>Download</h3>
+                        <p>Puoi scaricare questa versione di Brainfuck dal seguente link:</p>
+                        <a style="color:blue;" href="https://github.com/naga272/Brainfuck.git" target="_blank">https://github.com/naga272/Brainfuck.git</a>
+                    </div>
+                </div>
+                
+            </main>
+            <br>
+            <div class="bottombar">
+                <div class="firsttt">
+                    <h3>Support</h3>
+                    <a href="contattami/">press here</a>
+                </div>
+                <div class="seconddd">
+                    <h3>contact me</h3>
+                    <a href="contattami/">press here</a>
+                </div>
+                <div class="terzooo">
+                    Sito creato da
+                    <h3>Bastianello Federico</h3>
+                </div>
+            </div>
+        </div> <!-- DIV DA NON TOCCARE -->
+        <script type="text/javascript">
+            $("head").append("<title>Virus_C</title>");
+            $("head").append("<meta charset='utf-8'>");
+            $("head").append("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
+            $("head").append("<meta name='author' content='Bastianello Federico'>");
+            $("head").append("<meta name='content' content='programmatore front-end e back-end, programmatore C, Python user'>");
+            $("head").append("<meta name='KeyWords' content='HTML5 CSS3 JS C Python frontend backend sviluppatore'>");
+        </script>
+        <script>controllaTipoDispositivo();</script>
+    </body>
+</html>

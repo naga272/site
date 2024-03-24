@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device, initial-scale=1.0">
+        <meta name="author" content="Bastianello Federico">
+
+        <script src="../static/js/javascript.js"></script>     
+        <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        <link href="../static/css/style.css" rel="StyleSheet">
+        <link rel="icon" type="image/x-icon" href="../static/img/portfolio.png">
+        <style>
+            .about_me img{
+                border-top:1px solid black;
+                border-bottom: 10px solid rgb(31, 30, 30);
+                border-left:10px solid black;
+            }
+
+            main div a{color:#fff;}
+
+            .figura{
+                color:#fff;
+                transition: all 1.7s ;
+            }
+            .figura:hover{
+                background-color:#333;
+                color:#fff;
+            }
+            table tr td{
+                padding:1%;
+                border:1px solid #fff;
+                transition:all .7s;
+            }
+            table tr td:hover{
+                padding:2%;
+                color: #df2b4b;
+                border:1px solid #df2b4b;
+            }
+            .project{
+				margin-top:10%;
+				padding:4%;
+				background-color: #333;
+			}
+        </style>
+    </head>
+    <body>
+        <div style="display:flex; flex-direction: column;"> <!-- DIV DA NON TOCCARE -->
+            <header>
+                <div class="topbar">
+                    <div class="titolo_top">
+                        <a href="/"><span style="color:black">My Port</span><span style="color:#df2b4b">Folio</span></a>
+                    </div>
+                    <div class="group_link">
+                        <a href="../project/">Project</a>
+                        <a href="../certificazioni/">Certificazioni</a>
+                        <a href="../contattami/">Contact Me</a>
+                    </div>
+                </div>
+            </header>
+
+
+            <main style="display: flex; flex-direction: column; margin-top: 10%;"> <!--     CORPO PAGINA        -->
+                <div class="project">
+                    <h3 style="color:red">Creazione di un compilatore con Python e assembly</h3><br>
+                    <p>
+                        <span style="color:red">Requirements</span>:
+                        <ul>
+                            <li>Python 3.11 o maggiore <a href="https://www.python.org/downloads/" style="color:blue">(vai sul sito ufficiale)</a></li>
+                            <li>compilatore nasm <a href="https://www.nasm.us" style="color:blue">(vai sul sito ufficiale)</a></li>
+                            <li>conoscenza base di nasm x64 bit</li>
+                            <li>gestione stringhe tramite regex con python</li>
+                            <li>linker ld <a href="https://gnuwin32.sourceforge.net/packages/ld.htm" style="color:blue">(vai sul sito ufficiale)</a></li>
+                            <li>opzionale: debugger gdb <a href="https://rpg.hamsterrepublic.com/ohrrpgce/GDB_on_Windows" style="color:blue">(vai sul sito ufficiale)</a></li>
+                        </ul>
+                    </p><br>
+    
+                    <p>
+                        In pratica, per costruire un linguaggio di programmazione tutto nostro, dobbiamo analizzare il codice sorgente e in base<br>
+                        a quello che è stato scritto bisogna tradurlo in codice assembly, poi tramite un compilatore (come nasm) <br>
+                        trasformarlo in un file oggetto per poi linkarlo (con un linker tipo ld) e produrre l'eseguibile.
+                    </p>
+                    <br>
+    
+                    <span style="color:red">pipeline:</span>
+                    <div>sorgente.sor</div>
+                    <div>traduttore.py</div>
+                    <div>sorgente.asm</div>
+                    <div>sorgente.o</div>
+                    <div>sorgente.exe</div>
+                    <br>
+                    <p>
+                        il file sorgente.sor (l'estensione la decidiamo noi) viene dato in pasto al traduttore.py, <br>
+                        che ha il compito di analizzare il contenuto del file che gli abbiamo dato e di risputarlo <br>
+                        in formato assembly. In pratica, se all'interno del file sorgente c'è scritto:<br><br>
+                        <span style="background-color: black; padding:1%">
+                            <span style="color:orange">
+                                print(<span style="color:green">"Hello World"</span>)
+                            </span>
+                        </span><br><br>
+                        Il traduttore dovrà inserire il codice assembly corrispondente nel file sorgente.asm per stampare a schermo "Hello World". Quindi:<br>
+                        
+                        <div style="width:100%; background-color: black; color:green; padding:1%">
+                            <span style="color:blue">; estrema semplificazione della print, serve a far capire solo come funziona la traduzione</span><br>
+                            Global _start<br>
+                            <span style="color:orangered;">section .data</span><br>
+                            <span style="margin-left:5%">msg db "Hello World", 0</span><br>
+                            <span style="margin-left:5%">size_msg equ $ - msg</span><br>
+                            <span style="color:orangered;">section .text</span><br><br>
+                            
+                            _start:<br>
+                            <span style="margin-left:5%; color:blue">; all'inizio di ogni programma e' sempre consigliato di resettare i valori dei registri generali</span><br>
+                            
+                            <span style="margin-left:5%">xor rax, rax 			</span><br>
+                            <span style="margin-left:5%">xor rbx, rbx			</span><br>
+                            <span style="margin-left:5%">xor rcx, rcx			</span><br>
+                            <span style="margin-left:5%">xor rdx, rdx			</span><br>
+                            <br>
+                            <span style="margin-left:5%; color:blue">; inserisco size_msg e msg all'interno dello stack, per prelevarli dopo all'interno della funzione print</span><br>
+                            <span style="margin-left:5%">push size_msg			</span><br>
+                            <span style="margin-left:5%">push msg				</span><br>
+                            <span style="margin-left:5%">call print				</span><br>
+                            <br>
+                            _exit: <span style="margin-left:2%; color:blue">; codice per uscita dal programma</span><br>
+                            <span style="margin-left:5%">mov rax, 60</span><br>
+                            <span style="margin-left:5%">xor rdi, rdi</span><br>
+                            <span style="margin-left:5%">syscall</span><br><br>					
+                            
+                            print:<br>
+                            <span style="margin-left:5%">push rbp	 			</span><br>
+                            <span style="margin-left:5%">mov rbp, rsp			</span><br>
+                            <br>
+                            <span style="margin-left:5%">mov rax, 1 			</span><span style="color:blue">; codice chiamata sys-write</span><br>
+                            <span style="margin-left:5%">mov rdi, 1				</span><span style="color:blue">; file descriptor per STDOUT</span><br>
+                            <span style="margin-left:5%">mov rsi, [rbp + 16]	</span><span style="color:blue">; ptr che punta al primo carattere del vettore msg</span><br>
+                            <span style="margin-left:5%">mov rdx, [rbp + 24]	</span><span style="color:blue">; lunghezza del vettore di caratteri</span><br>
+                            <span style="margin-left:5%">syscall				</span><span style="color:blue">; chiamata di sistema</span><br>
+                            <br>
+                            <span style="margin-left:5%">leave					</span><span style="color:blue">; svuoto tutto il contenuto dello stack</span><br>
+                            <span style="margin-left:5%">ret					</span><br>
+                        </div>
+                    </p>
+                    <br>
+                    <h3 style="color:red">Perchè dobbiamo analizzare il codice sorgente</h3>
+                    <p>
+                        Il traduttore deve riconoscere le istruzioni del file sorgente e tradurle in assembly, se non riesce a capire che cosa sta leggendo deve essere<br>
+                        in grado di fermarsi, di comunicare il tipo di errore e a che riga è avvenuto.<br> 
+                    </p>
+                    <br><br>
+                    <h3 style="color:red">Come si svolge l'analisi sintattica del sorgente?</h3>
+                    <p>
+                        dato che il traduttore è un programma python, possiamo usare molto semplicemente il<br>
+                        <a href="https://docs.python.org/3/library/re.html" style="color:blue">modulo standard re</a> 
+                        Per far capire meglio come funziona esattamente, farò un esempio molto semplice:<br>
+                        Supponiamo che nel codice sorgente ci sia scritto:<br><br>
+                        <span style="background-color: black; padding:1%">
+                            <span style="color:orange">
+                                variabile <span style="color:red">=</span> <span style="color:green">"Hello World"</span>
+                            </span>
+                        </span><br><br>
+                        
+                        ora, quello che deve fare il traduttore è prendere questa riga del sorgente e domandarsi<br>
+                        se questo è un comando accettabile oppure no. Per fare questo dobbiamo definire delle regex.<br>
+                        Per il nostro linguaggio vogliamo che le variabili vengano dichiarate in questo modo:<br><br>
+                        <span style="background-color: black; padding:1%">
+                            <span style="color:orange">
+                                chiave <span style="color:red">=</span> <span style="color:green">valore</span>
+                            </span>
+                        </span><br><br>
+                        
+                        
+                        Quindi in python, dobbiamo definire delle regex di questo tipo:<br>
+                        <div style="width:100%; background-color: black; color:#fff; padding:1%">
+                            <span style="color:#333"># regex semplificate</span><br><br>
+                            <span style="color:purple;">import </span>re<br><br>
+                            <span>syntax_var = [</span><span style="color:#333; margin-left: 5%;"># caratteristiche delle variabili</span><br>
+                            
+                            <span style="color:green; margin-left:5%;">r"\s*\_*[A-Za-z]+(\w*\_*)*"</span>, <span style="color:#333"># chiave</span><br>
+                            <span style="color:green; margin-left:5%;">r"\s*=\s*"</span>, <span style="color:#333"># simbolo di assegnazione</span><br>
+                            <span style="color:green; margin-left:5%;">r"\"([^\"]*[.]*)*\"\s*\n*"</span>, <span style="color:#333"># valore caso stringhe</span><br>
+                            <span style="color:green; margin-left:5%;">r"\s*\d+\s*([\-\*\+\/\%]\s*+\s*\d+\s*)*\s*\n*"</span>, <span style="color:#333"># valore caso numeri interi o espressioni di numeri interi</span><br>
+    
+                            <span>]</span>
+                        </div>
+                        <br>
+                        Quindi quello che fara il programma è domandarsi costantemente:<br>
+                        "ma questa stringa è tra i pattern consentiti?"<br>
+                        Se lo è, trasforma la riga corrente in codice assembly (quindi lo inserisce anche nel file .asm)<br>
+                        Altrimenti comunica un errore di sintassi, fermando l'analisi.
+                    </p>
+                    <br>
+                    <p>
+                        una volta che il nostro traduttore ha tradotto tutto il contenuto del file sorgente in assembly,<br>
+                        deve avviare nasm. Per fare questo bisogna usare il <a href="https://docs.python.org/3/library/subprocess.html">modulo python subprocess</a>.<br>
+                        In pratica dobbiamo dire di creare un sotto processo che ha accesso alla shell del sistema operativo, e che deve eseguire un comando.<br>
+                        nel nostro caso, il sottoprocesso deve compilare e linkare il programma assembly che abbiamo creato con l'analizzatore.
+                        <br>
+                        
+                        <img src="../static/img/compiling_language.jpg" alt="fase di compilazione" width="800px" height="auto">
+                    </p><br>
+                    <p>
+                        Quello che avviene all'interno del file "compiler.py" è molto semplice:<br><br>
+                        <ul>
+                            <li>
+                                creiamo un file assembly in modalità di scrittura e ci scriviamo al suo interno
+                                tutto il codice assembly tradotto dal sorgente analizzato <br>
+                                (quindi inseriamo section .data, section .text, section.bss).
+                            </li><br>
+                            <li>
+                                Una volta fatto questo, dobbiamo preparare le stringhe per la compilazione e il linkaggio che verranno passate alla chiamata system.<br>
+                                La funzione system ritorna 0 se l'esecuzione del comando passatogli come parametro ha funzionato, 1 se invece ci sono stati problemi.<br>
+                            </li>
+                        </ul>
+                    </p>
+                    <br>
+                    <h3 style="color:red">Dove trovare il compilatore</h3>
+                    <p>
+                        L'eseguibile del compilatore puoi trovarlo sul mio <a href="https://github.com/naga272/compilatore">GitHub</a>,<br>
+                        Insieme a lui troverai un file .volt usato per i "test"
+                    </p>
+                </div>
+                
+            </main>
+            <br>
+            <div class="bottombar">
+                <div class="firsttt">
+                    <h3>Support</h3>
+                    <a href="contattami/">press here</a>
+                </div>
+                <div class="seconddd">
+                    <h3>contact me</h3>
+                    <a href="contattami/">press here</a>
+                </div>
+                <div class="terzooo">
+                    Sito creato da
+                    <h3>Bastianello Federico</h3>
+                </div>
+            </div>
+        </div> <!-- DIV DA NON TOCCARE -->
+        <script type="text/javascript">
+            $("head").append("<title>Virus_C</title>");
+            $("head").append("<meta charset='utf-8'>");
+            $("head").append("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
+            $("head").append("<meta name='author' content='Bastianello Federico'>");
+            $("head").append("<meta name='content' content='programmatore front-end e back-end, programmatore C, Python user'>");
+            $("head").append("<meta name='KeyWords' content='HTML5 CSS3 JS C Python frontend backend sviluppatore'>");
+        </script>
+        <script>controllaTipoDispositivo();</script>
+    </body>
+</html>

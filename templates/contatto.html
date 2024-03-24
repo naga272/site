@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device, initial-scale=1.0">
+        <meta name="author" content="Bastianello Federico">
+
+        <script src="../static/js/javascript.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        <link href="../static/css/style.css" rel="StyleSheet">
+        <link rel="icon" type="image/x-icon" href="../static/img/portfolio.png">
+        <style>
+            .presentazione{
+                background-color: #1b1a1a;
+                color:#fff;
+                padding:4%;
+                margin-right:15%;
+            }
+
+            .nome_label, .cognome_label, .email_label {
+                text-align: center; 
+                margin-bottom: 2%;    
+            } 
+            .contenuto_label{margin-bottom: 2%;}
+
+            .nome_label, .cognome_label, .email_label, .contenuto_label{
+                border:1px solid #fff;
+                transition:all .7s;
+            }.nome_label:hover, .cognome_label:hover, .email_label:hover, .contenuto_label:hover{
+                border:1px solid #df2b4b;
+                color:#df2b4b;
+            }.nome_label:focus, .cognome_label:focus, .email_label:focus, .contenuto_label:focus{
+                border:1px solid #df2b4b;
+                color:#df2b4b;
+            }
+
+            .submit{
+                height:20%;
+                padding-top: 1%;
+                padding-bottom: 1%;
+                color:#1b1a1a;
+                background-color: #fff;
+                transition:all .7s;
+                width:100%;
+            }.submit:hover{
+                cursor:pointer;
+                background-color: #1b1a1a;
+                color:#fff;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="topbar">
+                <div class="titolo_top">
+                    <a href="/" ><span style="color:black">My Port</span><span style="color:#df2b4b">Folio</span></a>
+                </div>
+                <div class="group_link">
+                    <a href="../project/">Project</a>
+                    <a href="../certificazioni/">Certificazioni</a>
+                    <a href="../contattami/">Contact Me</a>
+                </div>
+            </div>
+        </header>
+        <main style="display: flex; flex-direction: column;"> <!--     CORPO PAGINA        -->
+            <div class="presentazione">
+                <form action="" method="post" style="display: flex; flex-direction: column;">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {{ field.errors }}
+                        {{ field.label_tag}}
+                        {{ field }}
+                    {% endfor %}
+                    <input type="submit" value="invia" class="submit">
+                </form>
+            </div>
+        </main>
+        <div class="bottombar">
+            <div class="firsttt">
+                <h3>Support</h3>
+                <a href="contattami/">press here</a>
+            </div>
+            <div class="seconddd">
+                <h3>contact me</h3>
+                <a href="contattami/">press here</a>
+            </div>
+            <div class="terzooo">
+                Sito creato da
+                <h3>Bastianello Federico</h3>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        $("head").append("<title>contatto</title>");
+        $("head").append("<meta charset='utf-8'>");
+        $("head").append("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
+        $("head").append("<meta name='author' content='Bastianello Federico'>");
+        $("head").append("<meta name='content' content='programmatore front-end e back-end, programmatore C, Python user'>");
+        $("head").append("<meta name='KeyWords' content='HTML5 CSS3 JS C Python frontend backend sviluppatore'>");
+    </script>
+    <script>controllaTipoDispositivo();</script>
+</html>
